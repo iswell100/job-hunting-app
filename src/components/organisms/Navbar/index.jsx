@@ -2,6 +2,7 @@ import React from 'react'
 
 import './style.css'
 import { Link } from 'react-router-dom'
+import { Button } from 'antd'
 
 export default function Navbar() {
   return (
@@ -17,6 +18,13 @@ export default function Navbar() {
                 </Link>
             </div>
         </div>
+        <div className="auth">
+            <Button className="btn-link" type="link">
+                Login
+            </Button>
+            <Button type="primary">Sign Up</Button>
+        </div>
+
     </div>
   )
 }
