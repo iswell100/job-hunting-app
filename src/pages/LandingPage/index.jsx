@@ -3,6 +3,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { incrementCounter } from '../../redux/counter/action'
 import LandingPageTemplate from '../../components/templates/LandingPageTemplate'
+import Hero from '../../components/organisms/Hero'
 
 const {Title} = Typography
 
@@ -22,6 +23,8 @@ export default function LandingPage() {
     //   <Button onClick={handleIncrement} type='primary'>Increment</Button>
     // </div>
 
-    <LandingPageTemplate>Content</LandingPageTemplate>
+    <LandingPageTemplate>
+      <Hero />
+    </LandingPageTemplate>
   )
 }

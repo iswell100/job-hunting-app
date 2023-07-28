@@ -4,8 +4,9 @@ import Navbar from '../../organisms/Navbar'
 export default function LandingPageTemplate({children}) {
   return (
     <div>
-        <Navbar />
-        <div id="content">{children}</div>
+      <div className='bg-landingpage'></div>
+      <Navbar />
+      <div id="content">{children}</div>
     </div>
   )
 }
