@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { incrementCounter } from '../../redux/counter/action'
 import LandingPageTemplate from '../../components/templates/LandingPageTemplate'
 import Hero from '../../components/organisms/Hero'
+import Testimony from '../../components/organisms/Testimony'
+import Category from '../../components/organisms/Category'
 
 const {Title} = Typography
 
@@ -25,6 +27,8 @@ export default function LandingPage() {
 
     <LandingPageTemplate>
       <Hero />
+      <Testimony />
+      <Category />
     </LandingPageTemplate>
   )
 }
