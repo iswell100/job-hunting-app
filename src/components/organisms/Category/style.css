@@ -2,6 +2,28 @@
     margin-bottom: 30px;
 }
 
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.category-header .title {
+    font-size: 48px;
+    font-weight: 600;
+    color:#25324b;
+}
+
+.category-header .title span {
+    color: #26a4ff;
+}
+
+.btn-detail {
+    color: #4640de;
+    font-weight: 600;
+}
+
 .category-content {
     display: flex;
     flex-direction: row;
