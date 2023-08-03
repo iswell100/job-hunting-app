@@ -1,4 +1,4 @@
-import { Button, Typography } from 'antd'
+import { Typography } from 'antd'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { incrementCounter } from '../../redux/counter/action'
@@ -6,6 +6,8 @@ import LandingPageTemplate from '../../components/templates/LandingPageTemplate'
 import Hero from '../../components/organisms/Hero'
 import Testimony from '../../components/organisms/Testimony'
 import Category from '../../components/organisms/Category'
+import BannerSignUp from '../../components/organisms/BannerSignUp'
+import FeaturedJobs from '../../components/organisms/FeaturedJobs'
 
 const {Title} = Typography
 
@@ -29,6 +31,8 @@ export default function LandingPage() {
       <Hero />
       <Testimony />
       <Category />
+      <BannerSignUp />
+      <FeaturedJobs />
     </LandingPageTemplate>
   )
 }

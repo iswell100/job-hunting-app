@@ -4,6 +4,7 @@ import { persistReducer } from 'redux-persist'
 
 import counter from './counter/reducer'
 import category from './category/reducer'
+import featuredJob from './featuredJob/reducer'
 
 const persistConfig = {
     key: 'root',
@@ -12,7 +13,8 @@ const persistConfig = {
 
 const combineReducer = combineReducers({
     counter,
-    category
+    category,
+    featuredJob,
 })
 
 const persistedReducer = persistReducer(persistConfig, combineReducer);
