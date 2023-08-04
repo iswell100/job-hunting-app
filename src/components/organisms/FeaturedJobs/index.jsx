@@ -11,9 +11,7 @@ export default function FeaturedJobs() {
     const {jobs} = useSelector((state) => state.featuredJob)
     const dispatch = useDispatch()
 
-    console.log(jobs);
-
-    useEffect(() => { dispatch(
+    useEffect(() => { dispatch( 
         getFeaturedJobs())
     }, [])
 
