@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function JobItem({jobType, name, type, location, desc, categories}) {
+  const navigate = useNavigate()
+
   return (
-    <div className='featured-item'>
+    <div className='featured-item' onClick={() => navigate('/job/detail/1')}>
       <div className='logo-tag'>
         <img src="/images/company.png" alt="/images/company.png" />
         <span className='tag'>{jobType}</span>
@@ -16,7 +19,9 @@ export default function JobItem({jobType, name, type, location, desc, categories
       </div>
       <div className='category-flex'>
         {categories.map((item, i) => (
-          <span key={i} className='category'>{item}</span>
+          <span 
+          key={i} 
+          className='category'>{item}</span>
         ))}
       </div>
     </div>

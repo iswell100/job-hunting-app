@@ -18,7 +18,9 @@ export default function Testimony() {
         </div>
         <div className='list-testimony'>
             {listOfTestimony.map((item, i) => (
-                <img src={item} alt={item}  key={i}/>
+                <img src={item} alt={item} 
+                key={i}
+                />
             ))}
         </div>
     </div>

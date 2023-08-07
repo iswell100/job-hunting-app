@@ -20,7 +20,9 @@ export default function FeaturedJobs() {
       <ContentHeader word1={"Featured"} word2={"jobs"} />
       <div className='featured-content'>
         {jobs.map((item, i) => (
-          <JobItem name={item.name} jobType={item.jobType} type={item.type} location={item.location} categories={item.categories} desc={item.desc} key={i} />
+          <JobItem name={item.name} jobType={item.jobType} type={item.type} location={item.location} categories={item.categories} desc={item.desc} 
+          key={i} 
+          />
         ))}
       </div>
     </div>

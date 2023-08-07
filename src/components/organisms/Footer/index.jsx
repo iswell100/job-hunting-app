@@ -62,7 +62,7 @@ export default function Footer() {
         <div>2021 @Jobhunting. All rights reserved</div>
         <div>
           {images.map((item, i) => (
-            <img src={item} alt={item} />
+            <img src={item} alt={item} key={i}/>
           ))}
         </div>
       </div>

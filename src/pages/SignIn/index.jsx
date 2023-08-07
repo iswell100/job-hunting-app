@@ -2,8 +2,10 @@ import React from 'react'
 
 import './style.css'
 import { Button } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
+import { useDispatch, useSelector } from 'react-redux'
+import { postSignin } from '../../redux/auth/action'
 
 export default function SignIn() {
   const {
@@ -12,18 +14,30 @@ export default function SignIn() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const { user } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {   
+    await dispatch(postSignin(data));
+    
+    if (user) {
+      navigate("/");
+    }
+  };
+
+  if (user) {
+    return <Navigate to='/' replace />
   }
 
-  return <div className='login-wrapper'>
+  return (<div className='login-wrapper'>
     <div className='bg-login'>
       <img src="/images/login-bg.png" alt="/images/login-bg.png" />
     </div>
     <div className='form-wrapper'>
       <div className='form-wrapper-inner'>
         <h2>Welcome Back, Dude</h2>
-        <form onSubmit={handleSubmit(onSubmit)} action="">
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className='form-field'>
             <label htmlFor="email">Email</label>
             <input type='text' id='email' className='input-custom2' placeholder='Enter email address' {...register("email", { required: true })} />
@@ -34,7 +48,7 @@ export default function SignIn() {
             )}
           </div>
           <div className='form-field'>
-            <label htmlFor="password">Email</label>
+            <label htmlFor="password">Password</label>
             <input type='password' id='password' className='input-custom2' placeholder='Enter password address' {...register("password", { required: true })} />
             {errors.password && (
               <span className="hint-error">
@@ -54,5 +68,5 @@ export default function SignIn() {
       </div>
     </div>
   </div>
-  
+  );  
 }

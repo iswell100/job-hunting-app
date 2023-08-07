@@ -6,6 +6,7 @@ import counter from './counter/reducer'
 import category from './category/reducer'
 import featuredJob from './featuredJob/reducer'
 import latestJob from './latestJob/reducer'
+import auth from './auth/reducer'
 
 const persistConfig = {
     key: 'root',
@@ -17,6 +18,7 @@ const combineReducer = combineReducers({
     category,
     featuredJob,
     latestJob,
+    auth,
 })
 
 const persistedReducer = persistReducer(persistConfig, combineReducer);
